@@ -1,15 +1,19 @@
-/*
- * Copyright 2013 - Jeandeson O. Merelis
- */
 package coffeepot.br.sped.fiscal.arquivo.blocoK;
 
-import java.util.List;
+import java.time.LocalDate;
+
+import coffeepot.bean.wr.annotation.Field;
+import coffeepot.bean.wr.annotation.Record;
+import coffeepot.bean.wr.types.AccessorType;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 /*
  * #%L
  * coffeepot-br-sped-fiscal
  * %%
- * Copyright (C) 2013 Jeandeson O. Merelis
+ * Copyright (C) 2013 - 2024 Jeandeson O. Merelis
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,30 +29,17 @@ import java.util.List;
  * #L%
  */
 
-
-import coffeepot.bean.wr.annotation.Field;
-import coffeepot.bean.wr.annotation.Record;
-import lombok.Getter;
-import lombok.Setter;
-
-/**
- * @author Djeison A. Selzlein &amp; Anderson A. Mallmann
- */
 @Record(fields = {
-    @Field(name = "regK001"),
-    @Field(name = "regK010"),
-    @Field(name = "regK100"),
-    @Field(name = "regK200List"),
-    @Field(name = "regK990")
+        @Field(name = "reg", id = true, constantValue = "K100"),
+        @Field(name = "dtIni"),
+        @Field(name = "dtFin")
 })
 @Getter
 @Setter
-public class BlocoK {
+@NoArgsConstructor
+public class RegK100 {
 
-    private RegK001 regK001;
-    private RegK010 regK010;
-    private RegK100 regK100;
-    private List<RegK200> regK200List;
-    private RegK990 regK990;
+    private LocalDate dtIni;
+    private LocalDate dtFin;
 
 }

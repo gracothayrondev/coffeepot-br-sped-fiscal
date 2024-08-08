@@ -3,7 +3,7 @@
  */
 package coffeepot.br.sped.fiscal.arquivo.blocoK;
 
-import java.util.List;
+import java.time.LocalDate;
 
 /*
  * #%L
@@ -28,27 +28,19 @@ import java.util.List;
 
 import coffeepot.bean.wr.annotation.Field;
 import coffeepot.bean.wr.annotation.Record;
+import coffeepot.bean.wr.types.AccessorType;
+import coffeepot.br.sped.fiscal.tipos.TipoLeiauteBlocoK;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-/**
- * @author Djeison A. Selzlein &amp; Anderson A. Mallmann
- */
-@Record(fields = {
-    @Field(name = "regK001"),
-    @Field(name = "regK010"),
-    @Field(name = "regK100"),
-    @Field(name = "regK200List"),
-    @Field(name = "regK990")
+@Record(accessorType = AccessorType.PROPERTY, fields = {
+    @Field(name = "reg", id=true, constantValue = "K010"),
+    @Field(name = "indTpLeiaute")
 })
 @Getter
 @Setter
-public class BlocoK {
-
-    private RegK001 regK001;
-    private RegK010 regK010;
-    private RegK100 regK100;
-    private List<RegK200> regK200List;
-    private RegK990 regK990;
-
+@NoArgsConstructor
+public class RegK010 {
+    private TipoLeiauteBlocoK indTpLeiaute;
 }
