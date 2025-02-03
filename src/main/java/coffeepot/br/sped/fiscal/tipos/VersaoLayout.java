@@ -99,7 +99,12 @@ public enum VersaoLayout implements EnumCodificado {
 	/**
      * Versão 1.18 Ato COTEPE 01/01/2024.
      */
-    VERSAO_018("018");
+    VERSAO_018("018"),
+	/**
+     * Versão 1.19 Ato COTEPE 01/01/2024.
+     */
+    VERSAO_019("019");
+	
 
 	private final String codigo;
 
